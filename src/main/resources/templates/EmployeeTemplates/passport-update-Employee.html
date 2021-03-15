@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml ">
+<head>
+    <meta charset="UTF-8">
+    <title>Обновление паспорта</title>
+</head>
+<body>
+<form action="#" th:action="@{/employees/passport-update}" th:object="${passport}" method="post">
+    <label for="id">Id</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="id">
+
+    <label for="passportNumber">Номер паспорта</label>
+    <input type="text" th:field="*{number}" id="passportNumber" placeholder="Passport number">
+
+    <input type="submit" value="Обновить" />
+</form>
+
+<h3><a th:href="@{/employees/all}">Cancel</a></h3>
+</body>
+</html>

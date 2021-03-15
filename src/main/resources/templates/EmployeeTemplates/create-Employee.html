@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml ">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать нового сотрудника</title>
+</head>
+<body>
+<form action="#" th:action="@{/employees/create}" th:object="${employee}" method="post">
+    <label for="firstName">Имя</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last name">
+    <label for="passportNumber">Номер паспорта</label>
+    <input type="text" th:field="*{passportNumber}" id="passportNumber" placeholder="Passport number">
+    <label for="positionsList">Должность</label>
+    <select th:field="*{position}" id="positionsList">
+        <option value="">--</option>
+        <option th:each="position : ${positions}"
+            th:value="${position.getId()}"
+            th:utext="${position.getName()}"></option>
+    </select>
+    <input type="submit" value="Создать" />
+</form>
+
+<h3><a th:href="@{/employees/all}">Отмена</a></h3>
+</body>
+</html>

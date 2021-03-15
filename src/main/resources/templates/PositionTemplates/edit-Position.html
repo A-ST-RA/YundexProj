@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml ">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить должность</title>
+</head>
+<body>
+<form action="#" th:action="@{/positions/update}" th:object="${position}" method="post">
+    <label for="id">Id</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="id">
+
+    <label for="name">Навзание должности</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Position name">
+
+    <label for="salary">Зарплата</label>
+    <input type="text" th:field="*{salary}" id="salary" placeholder="Position salary">
+
+    <input type="submit" value="Обновить" />
+</form>
+
+<h3><a th:href="@{/positions/all}">Отмена</a></h3>
+</body>
+</html>
